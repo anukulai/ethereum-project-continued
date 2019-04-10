@@ -78,35 +78,74 @@ App = {
 
   renderTasks: async () => {
     // Load the total task count from the blockchain
-    const taskCount = await App.todoList.taskCount()
+    const Count = await App.todoList.Count()
+    console.log(Count);
     const $taskTemplate = $('.taskTemplate')
 
     // Render out each task with a new task template
-    for (var i = 1; i <= taskCount; i++) {
+    for (var i = 1; i <= Count; i++) {
       // Fetch the task data from the blockchain
       const task = await App.todoList.tasks(i)
+      //console.log(task);
       const taskId = task[0].toNumber()
-      const taskContent = task[1]
-      const taskCompleted = task[2]
+      console.log(taskId)
+      const taskname = task[1]
+        console.log(taskname)
+      const taskbranch = task[2]
+        //console.log(taskbranch)
+        const interest = task[3]
+        //console.log(interest);
+        const cgpa = task[4]
+        const intern = task[5]
+        const tech1 = task[6]
+        const tech2 = task[7]
+        //console.log(tech2)
 
       // Create the html for the task
       const $newTaskTemplate = $taskTemplate.clone()
-      $newTaskTemplate.find('.content').html(taskContent)
-      $newTaskTemplate.find('input')
-                      .prop('name', taskId)
-                      .prop('checked', taskCompleted)
-                      // .on('click', App.toggleCompleted)
+      $newTaskTemplate.find('.nameT').html(taskname)
+        $newTaskTemplate.find('.branchT').html(taskbranch)
+        $newTaskTemplate.find('.interestT').html(interest)
+        $newTaskTemplate.find('.cgpaT').html(cgpa)
+        $newTaskTemplate.find('.internT').html(intern)
+        $newTaskTemplate.find('.tech1T').html(tech1)
+        $newTaskTemplate.find('.tech2T').html(tech2)
+      //$newTaskTemplate.find('input')
+        //              .prop('id', taskId)
+                      //.prop('checked', taskCompleted)
+                      //.on('click', App.toggleCompleted)
 
       // Put the task in the correct list
-      if (taskCompleted) {
-        $('#completedTaskList').append($newTaskTemplate)
-      } else {
+    //  if (taskCompleted) {
+      //  $('#completedTaskList').append($newTaskTemplate)
+     // } else {
+       // $('#taskList').append($newTaskTemplate)
+     // }
         $('#taskList').append($newTaskTemplate)
-      }
-
       // Show the task
       $newTaskTemplate.show()
     }
+  },
+
+  createTask: async () => {
+      App.setLoading(true)
+      const name = $('#newTask').val()
+      const branch = $('#newbranch').val()
+      const interest = $('#interest').val()
+      const cgpa = $('#cgpa').val()
+      const intern = $('#intern').val()
+      const tech1 = $('#tech1').val()
+      const tech2 = $('#tech2').val()
+      //const tech3 = $('#tech3').val()
+      await App.todoList.createTask(name, branch, interest, cgpa,  intern, tech1, tech2)
+      window.location.reload()
+  },
+
+  toggleCompleted: async (e) => {
+      App.setLoading(true)
+      const taskId = e.target.name
+      await App.todoList.toggleCompleted(taskId)
+      window.location.reload()
   },
 
   setLoading: (boolean) => {

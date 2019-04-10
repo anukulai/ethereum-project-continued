@@ -1,0 +1,20 @@
+//for adding more fields// 
+add input text boxes in index.js
+change their respective placeholders and id
+int add.js make changes in createTask
+make changes everywhere on todolist.sol
+change the struct variables
+changes in the event
+make changes in the function createTask
+
+//display your submited form//
+make changes in the loop introduce all the constants and extract from blockchain
+next, use the id (from input html tag) [creating html for the task]
+in the render function:
+    load task from blockchain
+    render each task on new task template
+    show the tasks
+
+firstly cloning the template created in the html code
+(filling in data into the template)
+find the content from the dom and fill in the content from the data received from the blockchain
