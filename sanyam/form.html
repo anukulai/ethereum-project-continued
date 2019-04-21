@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Student Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+
+  div.align-center {
+    text-align: center;
+  }
+
+  * {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 12px;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: center;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+
+ </style>
+</head>
+
+<body style="height:1500px">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">STUDENTS ACHIEVEMENT MANAGEMENT SYSTEM</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+  
+<div class="container-fluid">
+  <h2>Carousel Example</h2>  
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="sams.jpg" alt="SAMS" style="width:150%;">
+      </div>
+    </div>
+
+<div class="container ">
+  <div class="align-center">
+    <h1>STUDENT DETAILS</h1>
+  </div>
+<form action="profile.php" method="POST">
+  <div class="row">
+    <div>
+      <div class="container">
+  
+  <div class="row">
+    <div class="col-25">
+      <label for="fname">NAME</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="name" name="name" placeholder="NAME">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="lname">USER ID</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="uid" name="uid" placeholder="UID">
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="branch">BRANCH</label>
+    </div>
+    <div class="col-75">
+      <select id="branch" name="branch">
+        <option value="cs">Computer Science</option>
+        <option value="it">Information Technology</option>
+        <option value="extc">Electronics and Telecommunication</option>
+        <option value="etrx">Electronics</option>
+
+      </select>
+    </div>
+  </div>
+     <div class="row">
+    <div class="col-25">
+      <label for="year">STUDYING IN</label>
+    </div>
+    <div class="col-75">
+      <select id="year" name="year">
+        <option value="1">FE</option>
+        <option value="2">SE</option>
+        <option value="3">TE</option>
+        <option value="4">BE</option>
+
+      </select>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-25">
+      <label for="cgpa">C.G.P.A</label>
+    </div>
+    <div class="col-75">
+     
+      <label for="cgpa1">CGPA 1st YEAR:</label>
+      <input type="number" id="cgpa1" placeholder="Enter GPA for 1st year" name="cgpa1"></br>
+      <label for="cgpa2">CGPA 2nd YEAR:</label>
+      <input type="number" id="cgpa2" placeholder="Enter GPA for 2nd year" name="cgpa2"></br>
+      <label for="cgpa3">CGPA 3rd YEAR:</label>
+      <input type="number" id="cgpa3" placeholder="Enter GPA for 3rd year" name="cgpa3"></br>
+      <label for="cgpa4">CGPA 4th YEAR:</label>
+      <input type="number" id="cgpa4" placeholder="Enter GPA for 4th year" name="cgpa4"></br>
+     
+      
+    </div>
+
+
+  <div class="row">
+    <div class="col-25">
+      <label for="subject">ABOUT YOURSELF</label>
+    </div>
+    <div class="col-75">
+      <textarea id="about" name="about" placeholder="Write something about yourself" style="height:200px"></textarea>
+    </div>
+  </div>
+ 
+  
+ </div>
+
+    </div>
+  </div>
+  </div>
+ </div>
+
+ <div class="container ">
+  <div class="align-center">
+   <h1>TECHNOLOGY DETAILS</h1></br>
+   <div class="col-100">
+      
+      <label for="tech-name1">TECHNOLOGY-1:</label>
+      <input type="text" id="tech-name1" placeholder="Enter the name of the Technology" name="tech-name1">
+      <label for="tech-score1">RATING:</label>
+      <input type="number" id="tech-score1" placeholder="Rate yourself out of 10" name="tech-score1">
+      </br>
+      <label for="tech-name2">TECHNOLOGY-2:</label>
+      <input type="text" id="tech-name2" placeholder="Enter the name of the Technology" name="tech-name2">
+      <label for="tech-score2">RATING:</label>
+      <input type="number" id="tech-score2" placeholder="Rate yourself out of 10" name="tech-score2">
+      </br>
+      <label for="tech-name2">TECHNOLOGY-1:</label>
+      <input type="text" id="tech-name3" placeholder="Enter the name of the Technology" name="tech-name3">
+      <label for="tech-score1">RATING:</label>
+      <input type="number" id="tech-score3" placeholder="Rate yourself out of 10" name="tech-score3">
+      </br>
+    </div>
+  </div>
+ </div>
+
+ <div class="container ">
+  <div class="align-center">
+   <h1>CO-CURRICULAR DETAILS</h1>
+   </br>
+    <div class="row">
+    
+      <div class="col-100">
+       <label for="co-name1">ACTIVITY-1:</label>
+       <input type="text" id="co-name1" placeholder="Enter the name of the Activity" name="co-name1">
+       <label for="co-score1">RATING:</label>
+       <input type="number" id="co-score1" placeholder="Rate yourself out of 10" name="co-score1">
+       </br>
+       
+       <label for="co-name2">ACTIVITY-2:</label>
+       <input type="text" id="co-name2" placeholder="Enter the name of the Activity" name="co-name2">
+       <label for="co-score2">RATING:</label>
+       <input type="number" id="co-score2" placeholder="Rate yourself out of 10" name="co-score2">
+       </br>
+
+       <label for="co-name3">ACTIVITY-3:</label>
+       <input type="text" id="co-name3" placeholder="Enter the name of the Activity" name="co-name3">
+       <label for="co-score1">RATING:</label>
+       <input type="number" id="co-score3" placeholder="Rate yourself out of 10" name="co-score3">
+       </br>
+      </div>
+    </div>
+
+  </div>
+ </div>
+
+ <div class="container ">
+  <div class="align-center">
+     <h1>EXTRA-CURRICULAR DETAILS</h1>
+  </div>
+     </br>
+      <div class="row">
+       <div class="col-25">
+        <label for="extra-name">FIELD OF INTREST</label>
+       </div>
+       <div class="col-75">
+       <select id="extra-name" name="extra-name">
+        <option value="cultural">CULTURAL</option>
+        <option value="art">ART</option>
+        <option value="sports">SPORTS AND GYMNASTICS</option>
+       </select>
+      </div>
+    
+
+      <div class="row">
+        <div class="col-25">
+         <label for="extra-rating">RATING FOR THE PARTICULAR FIELD</label>
+        </div>
+        <div class="col-75">
+          <div class="align-center">
+           <input type="text" id="extra-rating" name="extra-rating" placeholder="Rate yourself out of 10">
+          </div>
+        </div>
+      </div>
+      
+  </div>
+ </div>
+
+  <div class="row">
+    <div class="align-center">
+     <div class="col-100">
+     <input type="submit" value="Submit">
+     </div>
+    </div>
+  </div>
+</form>
+
+</div>
+</body>
+</html>

@@ -86,30 +86,33 @@ App = {
     for (var i = 1; i <= Count; i++) {
       // Fetch the task data from the blockchain
       const task = await App.todoList.tasks(i)
-      //console.log(task);
+      console.log(task);
       const taskId = task[0].toNumber()
       console.log(taskId)
-      const taskname = task[1]
-        console.log(taskname)
-      const taskbranch = task[2]
-        //console.log(taskbranch)
-        const interest = task[3]
-        //console.log(interest);
-        const cgpa = task[4]
-        const intern = task[5]
-        const tech1 = task[6]
-        const tech2 = task[7]
-        //console.log(tech2)
+      const uid = task[1]
+        console.log(uid)
+      const cgpa1 = task[2]
+        console.log(cgpa1)
+        const cgpa2 = task[3]
+        console.log(cgpa2);
+        const cgpa3 = task[4]
+      console.log(cgpa3);
+        const cgpa4 = task[5]
+      console.log(cgpa4);
+        const report = task[6]
+      console.log(report);
+        const cert = task[7]
+        console.log(cert);
 
       // Create the html for the task
       const $newTaskTemplate = $taskTemplate.clone()
-      $newTaskTemplate.find('.nameT').html(taskname)
-        $newTaskTemplate.find('.branchT').html(taskbranch)
-        $newTaskTemplate.find('.interestT').html(interest)
-        $newTaskTemplate.find('.cgpaT').html(cgpa)
-        $newTaskTemplate.find('.internT').html(intern)
-        $newTaskTemplate.find('.tech1T').html(tech1)
-        $newTaskTemplate.find('.tech2T').html(tech2)
+      $newTaskTemplate.find('.uid').html(uid)
+        $newTaskTemplate.find('.cgpa1').html(cgpa1)
+        $newTaskTemplate.find('.cgpa2').html(cgpa2)
+        $newTaskTemplate.find('.cgpa3').html(cgpa3)
+        $newTaskTemplate.find('.cgpa4').html(cgpa4)
+        $newTaskTemplate.find('.rc').html(report)
+        $newTaskTemplate.find('.cert').html(cert)
       //$newTaskTemplate.find('input')
         //              .prop('id', taskId)
                       //.prop('checked', taskCompleted)
@@ -129,13 +132,13 @@ App = {
 
   createTask: async () => {
       App.setLoading(true)
-      const name = $('#newTask').val()
-      const branch = $('#newbranch').val()
-      const interest = $('#interest').val()
-      const cgpa = $('#cgpa').val()
-      const intern = $('#intern').val()
-      const tech1 = $('#tech1').val()
-      const tech2 = $('#tech2').val()
+      const name = $('#uid').val()
+      const branch = $('#c1').val()
+      const interest = $('#c2').val()
+      const cgpa = $('#c3').val()
+      const intern = $('#c4').val()
+      const tech1 = $('#rc').val()
+      const tech2 = $('#cert').val()
       //const tech3 = $('#tech3').val()
       await App.todoList.createTask(name, branch, interest, cgpa,  intern, tech1, tech2)
       window.location.reload()

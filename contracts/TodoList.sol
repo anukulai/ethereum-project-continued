@@ -5,26 +5,26 @@ contract TodoList {
 
   struct Task{
     uint id;
-    string name;
-    string branch;
-    string interest;
-    string cgpa;
-    string intern;
-    string tech1;
-    string tech2;
+    uint uid;
+    string cgpa1;
+    string cgpa2;
+    string cgpa3;
+    string cgpa4;
+    string Report;
+    string Certificate;
   }
 
   mapping (uint => Task) public tasks;
 
   event TaskCreated(
     uint id,
-    string name,
-    string branch,
-    string interest,
-    string cgpa,
-    string intern,
-    string tech1,
-    string tech2
+    uint uid,
+    string cgpa1,
+    string cgpa2,
+    string cgpa3,
+    string cgpa4,
+    string Report,
+    string Certificate
   );
 
   event TaskCompleted(
@@ -32,13 +32,13 @@ contract TodoList {
   );
 
   constructor() public{
-    createTask("sonu", "it", "10", "sports", "1", "ML", "data analytics");
+    createTask(2016140030, "9", "10", "8", "7", "Yes", " No");
   }
 
-  function createTask(string memory _name, string memory _branch, string memory _interest, string memory _cgpa, string memory _intern, string memory _tech1, string memory _tech2) public {
+  function createTask(uint _uid, string memory _cgpa1, string memory _cgpa2, string memory _cgpa3, string memory _cgpa4, string memory _report, string memory _certi) public {
     Count ++;
-    tasks[Count] = Task(Count, _name, _branch, _interest, _cgpa, _intern, _tech1, _tech2);
-    emit TaskCreated(Count, _name, _branch, _interest, _cgpa, _intern, _tech1, _tech2);
+    tasks[Count] = Task(Count, _uid, _cgpa1, _cgpa2, _cgpa3, _cgpa4, _report, _certi);
+    emit TaskCreated(Count, _uid, _cgpa1, _cgpa2, _cgpa3, _cgpa4, _report, _certi);
   }
 
   function toggleCompleted(uint _id) public{

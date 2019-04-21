@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Dapp University | Todo List</title>
+    <title> SAMS | Admin </title>
 
     <!-- Bootstrap -->
     <link href="vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -26,6 +26,15 @@
         display: none;
       }
 
+      .button {background-color: #008CBA;
+              padding-left: 40px;
+              padding-right: 40px;
+              padding-top: 20px;
+              padding-bottom: 20px;
+              border-style:solid;
+              border : black;
+              margin-left: 120px; }
+
       form {
         width: 350px;
         margin-bottom: 10px;
@@ -43,7 +52,7 @@
   </head>
   <body>
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="http://www.dappuniversity.com/free-download" target="_blank">Dapp University | Todo List</a>
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#" target="_blank">SAMS | Admin</a>
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap d-none d-sm-none d-sm-block">
           <small><a class="nav-link" href="#"><span id="account"></span></a></small>
@@ -57,26 +66,27 @@
             <p class="text-center">Loading...</p>
           </div>
           <div id="content">
+          
             <form onSubmit="App.createTask(); return false;">
-              <input id="newTask" type="text" class="form-control" placeholder="Add Full Name..." required>
-            <input id="newbranch" type="text" class="form-control" placeholder="Add Branch Name..." required>
-            <input id="interest" type="text" class="form-control" placeholder="Add area of interest..." required>
-            <input id="cgpa" type="text" class="form-control" placeholder="Add CGPA..." required>
-            <input id="intern" type="text" class="form-control" placeholder="Add Number Internship ..." required>
-            <input id="tech1" type="text" class="form-control" placeholder="Add Technology 1..." required>
-            <input id="tech2" type="text" class="form-control" placeholder="Add Technology 2..." required>
+              <input id="uid" type="text" class="form-control" placeholder="Add UID..." required>
+            <input id="c1" type="text" class="form-control" placeholder="Add CGPA OF FY..." required>
+            <input id="c2" type="text" class="form-control" placeholder="Add CGPA OF SY..." required>
+            <input id="c3" type="text" class="form-control" placeholder="Add CGPA OF TY..." required>
+            <input id="c4" type="text" class="form-control" placeholder="Add CGPA OF BE ..." required>
+            <input id="rc" type="text" class="form-control" placeholder="Add REPORT CARD..." required>
+            <input id="cert" type="text" class="form-control" placeholder="Add CERTIFICATE..." required>
             <br><br><input type="submit" >
             </form>
             <ul id="taskList" class="list-unstyled" >
               <div class="taskTemplate" >
                 <label>
-                <span class="nameT"></span></br>
-                <span class="branchT"></span></br>
-                <span class="interestT"></span></br>
-                <span class="cgpaT"></span></br>
-                <span class="internT"></span></br>
-                <span class="tach1T"></span></br>
-                <span class="tech2T"></span></br>
+                <span class="uid"></span></br>
+                <span class="c1"></span></br>
+                <span class="c2"></span></br>
+                <span class="c3"></span></br>
+                <span class="c4"></span></br>
+                <span class="rc"></span></br>
+                <span class="cert"></span></br>
                 </label>
               </div>
             </ul>
